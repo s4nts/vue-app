@@ -1,6 +1,11 @@
 <template>
-  <TheHeader />
-  <TheContent v-show="showContent" />
+  <TheHeader 
+    v-show="showHeader"
+  />
+  <img 
+    v-show="1 === 1"
+  alt="Vue logo" src="./assets/logo.png" />
+  <TheContent />
   <TheFooter />
 </template>
 
@@ -18,7 +23,7 @@ export default {
   },
   data() {
     return {
-      showContent: false,
+      showHeader: true,
     };
   },
 };
