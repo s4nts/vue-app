@@ -1,17 +1,14 @@
 <template>
   <TheHeader v-if="showHeader" />
-  <div v-if="acessLevel === 1">Olá, {{ user1 }}!</div>
-  <div v-else-if="acessLevel === 2">Olá, {{ user2 }}!</div>
-  <div v-else-if="acessLevel === 3">Olá, {{ user3 }}!</div>
-  <div v-else>{{ undefined }}</div>
+  <div class="logg-status" v-if="acessLevel === 1">Olá, {{ user1 }}!</div>
+  <div class="logg-status" v-else-if="acessLevel === 2">Olá, {{ user2 }}!</div>
+  <div class="logg-status" v-else-if="acessLevel === 3">Olá, {{ user3 }}!</div>
+  <div class="logg-status" v-else>{{ undefined }}</div>
 
   <img v-if="showImg" alt="Vue logo" src="./assets/logo.png" />
   <TheContent />
-  <div v-if="showName">
-    firstName: {{ firstName }} <br />
-    LastName: {{ LastName }}
-  </div>
-  <TheFooter />
+  <div class="logg-user" v-if="showName">Name: {{ firstName }} {{ LastName }}</div>
+  <TheFooter v-if="showFooter" />
 </template>
 
 <script>
@@ -28,16 +25,17 @@ export default {
   },
   data() {
     return {
-      showHeader: true,
+      showHeader: false,
       acessLevel: 1,
       user1: 'Usuário Admin',
       user2: 'Usuário Marketing',
       user3: 'Usuário',
 
-      showImg: 1 === 1,
-      showName: 1 !== '1',
-      firstName: 'Jon',
-      LastName: 'Snow',
+      showImg: 1 !== 1,
+      showName: false,
+      firstName: 'Wyulle',
+      LastName: 'Santos',
+      showFooter: false,
     };
   },
 };
@@ -51,5 +49,25 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.logg-status {
+  text-align: start;
+  color: #fff;
+  background: #2c3e50;
+  margin: 95px 0 20px 0;
+  padding: 20px 0 20px 10px;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.logg-user {
+  text-align: start;
+  color: #fff;
+  background: #2c3e50;
+  margin: 20px 0 20px 0;
+  padding: 20px 0 20px 10px;
+  border-radius: 5px;
+  width: 250px;
 }
 </style>
