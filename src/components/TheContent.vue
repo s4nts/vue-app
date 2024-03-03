@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1 :class="{ title: 1 !== '1' }">Curso Vue 3</h1>
+
     <div class="content" v-for="(obj, index) in todos" :key="obj.id">
       <img v-if="obj.imgSrc" :src="obj.imgSrc" />
       <img v-else src="#" />

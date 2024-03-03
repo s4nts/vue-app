@@ -6,7 +6,8 @@
   <div class="logg-status" v-else>{{ undefined }}</div>
 
   <img v-if="showImg" alt="Vue logo" src="./assets/logo.png" />
-  <TheContent />
+  <TheContent v-if="showContent" />
+  <TheSecContent />
   <div class="logg-user" v-if="showName">Name: {{ firstName }} {{ LastName }}</div>
   <TheFooter v-if="showFooter" />
 </template>
@@ -14,6 +15,7 @@
 <script>
 import TheHeader from './components/TheHeader.vue';
 import TheContent from './components/TheContent.vue';
+import TheSecContent from './components/TheSecContent.vue';
 import TheFooter from './components/TheFooter.vue';
 
 export default {
@@ -21,12 +23,14 @@ export default {
   components: {
     TheHeader,
     TheContent,
+    TheSecContent,
     TheFooter,
   },
   data() {
     return {
       showHeader: false,
-      acessLevel: 1,
+      showContent: false,
+      acessLevel: 3,
       user1: 'Usuário Admin',
       user2: 'Usuário Marketing',
       user3: 'Usuário',
@@ -46,9 +50,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0 0 20px 200px;
 }
 
 .logg-status {
