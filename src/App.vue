@@ -10,6 +10,7 @@
   <TwoWayData v-if="showTwoWayData" />
   <div class="logg-user" v-if="showName">Name: {{ firstName }} {{ LastName }}</div>
   <TheEvents v-if="showTheEvents" />
+  <TheComputed/>
   <TheFooter v-if="showFooter" />
 </template>
 
@@ -17,8 +18,9 @@
 import TheHeader from './components/TheHeader.vue';
 import TheContent from './components/TheContent.vue';
 import TwoWayData from './components/TwoWayData.vue';
-import TheFooter from './components/TheFooter.vue';
 import TheEvents from './components/TheEvents.vue';
+import TheComputed from './components/TheComputed.vue';
+import TheFooter from './components/TheFooter.vue';
 
 export default {
   name: 'App',
@@ -27,6 +29,7 @@ export default {
     TheContent,
     TwoWayData,
     TheEvents,
+    TheComputed,
     TheFooter,
   },
   data() {
@@ -43,7 +46,7 @@ export default {
       firstName: 'Wyulle',
       LastName: 'Santos',
       showTwoWayData: false,
-      showTheEvents: true,
+      showTheEvents: false,
       showFooter: false,
     };
   },
