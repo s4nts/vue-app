@@ -7,23 +7,26 @@
 
   <img v-if="showImg" alt="Vue logo" src="./assets/logo.png" />
   <TheContent v-if="showContent" />
-  <TheSecContent />
+  <TwoWayData v-if="showTwoWayData" />
   <div class="logg-user" v-if="showName">Name: {{ firstName }} {{ LastName }}</div>
+  <TheEvents v-if="showTheEvents" />
   <TheFooter v-if="showFooter" />
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue';
 import TheContent from './components/TheContent.vue';
-import TheSecContent from './components/TheSecContent.vue';
+import TwoWayData from './components/TwoWayData.vue';
 import TheFooter from './components/TheFooter.vue';
+import TheEvents from './components/TheEvents.vue';
 
 export default {
   name: 'App',
   components: {
     TheHeader,
     TheContent,
-    TheSecContent,
+    TwoWayData,
+    TheEvents,
     TheFooter,
   },
   data() {
@@ -39,6 +42,8 @@ export default {
       showName: false,
       firstName: 'Wyulle',
       LastName: 'Santos',
+      showTwoWayData: false,
+      showTheEvents: true,
       showFooter: false,
     };
   },
