@@ -6,17 +6,17 @@
   <div class="logg-status" v-else>{{ undefined }}</div>
 
   <img v-if="showImg" alt="Vue logo" src="./assets/logo.png" />
-  <TheContent v-if="showContent" />
+  <TodoList v-if="showTodo" />
   <TwoWayData v-if="showTwoWayData" />
   <div class="logg-user" v-if="showName">Name: {{ firstName }} {{ LastName }}</div>
   <TheEvents v-if="showTheEvents" />
-  <TheComputed/>
+  <TheComputed />
   <TheFooter v-if="showFooter" />
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue';
-import TheContent from './components/TheContent.vue';
+import TodoList from './components/TodoList.vue';
 import TwoWayData from './components/TwoWayData.vue';
 import TheEvents from './components/TheEvents.vue';
 import TheComputed from './components/TheComputed.vue';
@@ -26,7 +26,7 @@ export default {
   name: 'App',
   components: {
     TheHeader,
-    TheContent,
+    TodoList,
     TwoWayData,
     TheEvents,
     TheComputed,
@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       showHeader: false,
-      showContent: false,
+      showTodo: true,
       acessLevel: 3,
       user1: 'Usuário Admin',
       user2: 'Usuário Marketing',
