@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1 :class="{ title: 1 !== '1' }">Curso Vue 3</h1>
+    <!-- <h1 :class="{ title: 1 !== '1' }">Curso Vue 3</h1> -->
 
-    <div class="content" v-for="(obj, index) in todos" :key="obj.id">
+    <!-- <div class="content" v-for="(obj, index) in todos" :key="obj.id">
       <img v-if="obj.imgSrc" :src="obj.imgSrc" />
       <img v-else src="#" />
       <br />{{ (index += 1) }} - {{ obj.title }}
-    </div>
+    </div> -->
   </div>
 </template>
 

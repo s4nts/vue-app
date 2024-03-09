@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      showHeader: false,
+      showHeader: true,
       showTodo: true,
       acessLevel: 3,
       user1: 'Usuário Admin',
